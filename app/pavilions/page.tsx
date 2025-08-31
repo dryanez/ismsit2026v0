@@ -1,4 +1,5 @@
 import { Roboto_Condensed, Orbitron } from "next/font/google"
+import Link from "next/link"
 
 const robotoCondensed = Roboto_Condensed({
   subsets: ["latin"],
@@ -198,6 +199,12 @@ export default function Pavilions() {
                     <span>Technology showcase booths</span>
                   </div>
                 </div>
+                <Link
+                  href="/pavilions/suite-sigma"
+                  className="inline-block mt-6 bg-white text-[#FE6448] px-6 py-3 rounded font-orbitron font-bold uppercase hover:bg-gray-100 transition-colors"
+                >
+                  Enter Suite Σ (Sigma)
+                </Link>
               </div>
               <div className="text-[#FE6448] font-roboto-condensed">
                 <h4 className="text-xl font-bold mb-4">Innovation Highlights</h4>
