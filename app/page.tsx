@@ -189,12 +189,12 @@ export default function Home() {
 
           <div className="grid md:grid-cols-3 gap-8">
             <div className="flex justify-center">
-              <Link href="/pavilions" className="block transition-transform duration-300 hover:scale-110">
+              <Link href="/pavilions/suite-sigma" className="block transition-transform duration-300 hover:scale-110">
                 <img src="/psi-pavillion.svg" alt="PSI Pavillion" className="w-[25rem] h-[25rem] object-contain" />
               </Link>
             </div>
             <div className="flex justify-center">
-              <Link href="/pavilions" className="block transition-transform duration-300 hover:scale-110">
+              <Link href="/pavilions/suite-lambda" className="block transition-transform duration-300 hover:scale-110">
                 <img
                   src="/lambda-pavillion.svg"
                   alt="Lambda Pavillion"
@@ -203,7 +203,7 @@ export default function Home() {
               </Link>
             </div>
             <div className="flex justify-center">
-              <Link href="/pavilions" className="block transition-transform duration-300 hover:scale-110">
+              <Link href="/pavilions/suite-eta" className="block transition-transform duration-300 hover:scale-110">
                 <img src="/eta-pavillion.svg" alt="ETA Pavillion" className="w-[25rem] h-[25rem] object-contain" />
               </Link>
             </div>

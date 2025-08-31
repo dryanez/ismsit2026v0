@@ -132,44 +132,51 @@ export default function Pavilions() {
               <div className="text-[#85AFFB] font-roboto-condensed md:order-2">
                 <h4 className="text-xl font-bold mb-4">Academy Features</h4>
                 <p className="text-lg mb-4">
-                  Dive deep into the world of medical AI with hands-on workshops led by industry experts. Learn to
-                  implement AI solutions in clinical practice and understand the latest developments in machine learning
-                  for healthcare.
+                  Artificial intelligence (AI) toolkits are reshaping clinical diagnostics, workflow automation and
+                  surgical decision support. Experience the twenty most impactful medical-AI platforms currently in
+                  deployment through hands-on coding sessions.
                 </p>
                 <p className="text-base">
                   <strong>Duration:</strong> 180 minutes
                   <br />
-                  <strong>Capacity:</strong> 30 participants per session
+                  <strong>Capacity:</strong> 24 participants per session
                   <br />
-                  <strong>Level:</strong> Beginner to Advanced
+                  <strong>Requirements:</strong> WLAN-enabled laptop, headphones
                 </p>
               </div>
               <div className="bg-[#85AFFB] rounded-lg p-8 text-white md:order-1">
                 <div className="w-16 h-16 bg-white rounded mb-6"></div>
                 <h3 className="text-2xl font-orbitron font-bold uppercase mb-4">
-                  Artificial Intelligence Software Academy
+                  Suite Λ (Lambda) - Artificial Intelligence Software Academy
                 </h3>
                 <p className="text-lg font-roboto-condensed mb-6">
-                  A 180-minute intensive workshop spotlighting medical AI platforms and their clinical applications
+                  A 180-minute intensive that spotlights medical-AI platforms with hands-on coding and expert
+                  supervision
                 </p>
                 <div className="space-y-4 text-sm font-roboto-condensed">
                   <div className="flex items-center gap-2">
                     <div className="w-2 h-2 bg-[#FE6448] rounded-full"></div>
-                    <span>AI diagnostic tools demonstration</span>
+                    <span>Image segmentation suites and operative video annotators</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <div className="w-2 h-2 bg-[#FE6448] rounded-full"></div>
-                    <span>Machine learning model training</span>
+                    <span>Predictive dashboards and generative report writers</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <div className="w-2 h-2 bg-[#FE6448] rounded-full"></div>
-                    <span>Clinical decision support systems</span>
+                    <span>Structured demo pods with benchmark sheets</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <div className="w-2 h-2 bg-[#FE6448] rounded-full"></div>
-                    <span>Ethical AI in healthcare</span>
+                    <span>Build mini workflow under expert supervision</span>
                   </div>
                 </div>
+                <Link
+                  href="/pavilions/suite-lambda"
+                  className="inline-block mt-6 bg-white text-[#85AFFB] px-6 py-3 rounded font-orbitron font-bold uppercase hover:bg-gray-100 transition-colors"
+                >
+                  Enter Suite Λ (Lambda)
+                </Link>
               </div>
             </div>
 
