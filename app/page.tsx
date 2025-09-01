@@ -1,7 +1,8 @@
 "use client"
 import { Roboto_Condensed, Orbitron } from "next/font/google"
 import Link from "next/link"
-import { useState } from 'react'
+import { useState, useRef, useEffect, useCallback } from 'react'
+import useEmblaCarousel from 'embla-carousel-react'
 
 const robotoCondensed = Roboto_Condensed({
   subsets: ["latin"],
@@ -27,6 +28,30 @@ export default function Home() {
     { src: "/Parthners/polish chirug.svg", alt: "Polish Chirurg Logo" },
   ];
   const [menuOpen, setMenuOpen] = useState(false)
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true })
+  const [prevBtnDisabled, setPrevBtnDisabled] = useState(true)
+  const [nextBtnDisabled, setNextBtnDisabled] = useState(true)
+
+  const scrollPrev = useCallback(() => {
+    emblaApi?.scrollPrev()
+  }, [emblaApi])
+
+  const scrollNext = useCallback(() => {
+    emblaApi?.scrollNext()
+  }, [emblaApi])
+
+  const onSelect = useCallback((emblaApi) => {
+    setPrevBtnDisabled(!emblaApi.canScrollPrev())
+    setNextBtnDisabled(!emblaApi.canScrollNext())
+  }, [])
+
+  useEffect(() => {
+    if (!emblaApi) return
+
+    onSelect(emblaApi)
+    emblaApi.on('reInit', onSelect)
+    emblaApi.on('select', onSelect)
+  }, [emblaApi, onSelect])
   return (
     <div className={`${robotoCondensed.variable} ${orbitron.variable} min-h-screen bg-white`}>
       {/* Hero Section */}
@@ -193,8 +218,8 @@ export default function Home() {
       </section>
 
       {/* Pavilions Section */}
-      <section className="bg-white py-16 px-4 relative">
-        <div className="absolute left-0 right-0 bg-[#0D1858] h-32 z-0" style={{ top: "280px" }}></div>
+      <section className="bg-white py-24 px-4 relative">
+        <div className="absolute left-0 right-0 bg-[#0D1858] h-96 z-0 top-1/2 -translate-y-1/2"></div>
 
         <div className="max-w-6xl mx-auto relative z-10">
           <div className="text-center mb-12">
@@ -204,7 +229,60 @@ export default function Home() {
             <h2 className="text-2xl md:text-4xl font-orbitron font-bold text-[#0D1858] uppercase">Pavilions</h2>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          {/* Mobile Carousel View */}
+          <div className="md:hidden relative flex flex-col justify-center h-full">
+            <div className="overflow-hidden" ref={emblaRef}>
+              <div className="flex -ml-4"> {/* -ml-4 to counteract gap-8 on items */}
+                <div className="flex-none w-full pl-4"> {/* w-full for single item view, pl-4 for spacing */}
+                  <div className="flex justify-center">
+                    <Link href="/pavilions/suite-sigma" className="block transition-transform duration-300 hover:scale-110">
+                      <img src="/psi-pavillion.svg" alt="PSI Pavillion" className="w-[30rem] h-[30rem] object-contain" />
+                    </Link>
+                  </div>
+                </div>
+                <div className="flex-none w-full pl-4">
+                  <div className="flex justify-center">
+                    <Link href="/pavilions/suite-lambda" className="block transition-transform duration-300 hover:scale-110">
+                      <img
+                        src="/lambda-pavillion.svg"
+                        alt="Lambda Pavillion"
+                        className="w-[30rem] h-[30rem] object-contain"
+                      />
+                    </Link>
+                  </div>
+                </div>
+                <div className="flex-none w-full pl-4">
+                  <div className="flex justify-center">
+                    <Link href="/pavilions/suite-eta" className="block transition-transform duration-300 hover:scale-110">
+                      <img src="/eta-pavillion.svg" alt="ETA Pavillion" className="w-[30rem] h-[30rem] object-contain" />
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {/* Navigation Arrows */}
+            <button
+              className="absolute top-1/2 left-2 -translate-y-1/2 bg-gray-800 text-white p-1 rounded-full opacity-75 disabled:opacity-25"
+              onClick={scrollPrev}
+              disabled={prevBtnDisabled}
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+              </svg>
+            </button>
+            <button
+              className="absolute top-1/2 right-2 -translate-y-1/2 bg-gray-800 text-white p-1 rounded-full opacity-75 disabled:opacity-25"
+              onClick={scrollNext}
+              disabled={nextBtnDisabled}
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+              </svg>
+            </button>
+          </div>
+
+          {/* Desktop Grid View */}
+          <div className="hidden md:grid md:grid-cols-3 gap-8">
             <div className="flex justify-center">
               <Link href="/pavilions/suite-sigma" className="block transition-transform duration-300 hover:scale-110">
                 <img src="/psi-pavillion.svg" alt="PSI Pavillion" className="w-[30rem] h-[30rem] object-contain" />
