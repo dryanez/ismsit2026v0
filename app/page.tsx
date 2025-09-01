@@ -356,7 +356,7 @@ export default function Home() {
       </section>
 
       {/* Scientific Program Section */}
-      <section className="bg-white py-8 px-4 relative overflow-visible">
+      <section className="bg-white py-8 px-4 relative overflow-visible mt-16 md:mt-32">
         <div className="absolute right-0 z-10 top-[-400px] md:right-0 md:top-[-400px]">
           <img
             src="/hand-robotic.svg"

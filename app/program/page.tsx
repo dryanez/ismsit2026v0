@@ -216,7 +216,7 @@ export default function Program() {
       </section>
 
       {/* Program Overview */}
-      <section className="bg-white py-16 px-4">
+      <section className="bg-white py-48 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-2xl md:text-4xl font-orbitron font-bold text-[#0D1858] uppercase mb-6">
