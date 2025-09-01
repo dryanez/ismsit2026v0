@@ -1,20 +1,177 @@
+'use client';
 import ResponsiveNavigation from "@/components/ResponsiveNavigation";
-import { Roboto_Condensed, Orbitron } from "next/font/google"
-import styles from './day1.module.css'
+import { Roboto_Condensed, Orbitron } from "next/font/google";
+import DayProgramCard from "@/components/DayProgramCard";
+import { useState } from "react";
 
 const robotoCondensed = Roboto_Condensed({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-roboto-condensed",
-})
+});
 
 const orbitron = Orbitron({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-orbitron",
-})
+});
 
 export default function Program() {
+  const [activeDay, setActiveDay] = useState(1); // State to manage active day
+
+  const programDays = [
+    {
+      day: 1,
+      date: "Thursday, 19th November 2026",
+      bgColor: "bg-red-500",
+      content: (
+        <>
+          <div className="relative z-10 px-4 py-2">
+            <div className="mb-4">
+              <p className="text-white text-base font-normal font-['Orbitron'] capitalize">15:00</p>
+              <p className="text-white text-sm font-black font-['Roboto_Condensed'] uppercase">Registration Opens</p>
+              <p className="text-white text-sm font-light font-['Roboto_Condensed'] uppercase">Online registration via digital congress platform. On-site digital help desks available.</p>
+            </div>
+            <div className="mb-4">
+              <p className="text-white text-base font-normal font-['Orbitron'] capitalize">16:00</p>
+              <p className="text-white text-sm font-black font-['Roboto_Condensed'] uppercase">Welcome Reception</p>
+              <p className="text-white text-sm font-light font-['Roboto_Condensed'] uppercase">Drinks and light snacks served in the networking lounge.</p>
+            </div>
+            <div className="mb-4">
+              <p className="text-white text-base font-normal font-['Orbitron'] capitalize">17:00</p>
+              <p className="text-white text-sm font-black font-['Roboto_Condensed'] uppercase">Opening Ceremony</p>
+              <p className="text-white text-sm font-light font-['Roboto_Condensed'] uppercase">Welcome addresses from congress leadership.</p>
+            </div>
+            <div className="mb-4">
+              <p className="text-white text-base font-normal font-['Orbitron'] capitalize">17:30 - 19:30</p>
+              <p className="text-white text-sm font-black font-['Roboto_Condensed'] uppercase">Artistic & Scientific Welcome</p>
+              <p className="text-white text-sm font-light font-['Roboto_Condensed'] uppercase">A unique blend of musical performances and institutional welcomes from our esteemed partners.</p>
+            </div>
+            <div className="mb-4">
+              <p className="text-white text-base font-normal font-['Orbitron'] capitalize">20:00</p>
+              <p className="text-white text-sm font-black font-['Roboto_Condensed'] uppercase">Closing Remarks</p>
+            </div>
+          </div>
+        </>
+      ),
+    },
+    {
+      day: 2,
+      date: "Friday, 20th November 2026",
+      bgColor: "bg-[#85AFFB]",
+      content: (
+        <>
+          <div className="relative z-10 px-4 py-2">
+            <div className="mb-4">
+              <p className="text-white text-base font-normal font-['Orbitron'] capitalize">08:30 – 09:30</p>
+              <p className="text-white text-sm font-black font-['Roboto_Condensed'] uppercase">Official Welcome Ceremony & John Abele Lecture</p>
+            </div>
+            <div className="mb-4">
+              <p className="text-white text-base font-normal font-['Orbitron'] capitalize">09:30 – 10:15</p>
+              <p className="text-white text-sm font-black font-['Roboto_Condensed'] uppercase">Session: "Deep Space of Data"</p>
+              <p className="text-white text-sm font-light font-['Roboto_Condensed'] uppercase">New Dimensions: Added Reality</p>
+            </div>
+            <div className="mb-4">
+              <p className="text-white text-base font-normal font-['Orbitron'] capitalize">10:30 – 11:15</p>
+              <p className="text-white text-sm font-black font-['Roboto_Condensed'] uppercase">Session: "Beyond the Cutting Edge"</p>
+              <p className="text-white text-sm font-light font-['Roboto_Condensed'] uppercase">Monitoring, Planning, Decisions</p>
+            </div>
+            <div className="mb-4">
+              <p className="text-white text-base font-normal font-['Orbitron'] capitalize">11:20 – 12:30</p>
+              <p className="text-white text-sm font-black font-['Roboto_Condensed'] uppercase">Session: "Next-Generation"</p>
+              <p className="text-white text-sm font-light font-['Roboto_Condensed'] uppercase">Sensoring & AI</p>
+            </div>
+            <div className="mb-4">
+              <p className="text-white text-base font-normal font-['Orbitron'] capitalize">13:30 – 14:00</p>
+              <p className="text-white text-sm font-black font-['Roboto_Condensed'] uppercase">Keynote: Gerhard Buess Lecture</p>
+            </div>
+            <div className="mb-4">
+              <p className="text-white text-base font-normal font-['Orbitron'] capitalize">14:00 – 14:55</p>
+              <p className="text-white text-sm font-black font-['Roboto_Condensed'] uppercase">Session: "Bold Frontiers"</p>
+              <p className="text-white text-sm font-light font-['Roboto_Condensed'] uppercase">Predictive Analytics</p>
+            </div>
+            <div className="mb-4">
+              <p className="text-white text-base font-normal font-['Orbitron'] capitalize">19:00</p>
+              <p className="text-white text-sm font-black font-['Roboto_Condensed'] uppercase">Evening Event: "Feast of the Middle Ages"</p>
+              <p className="text-white text-sm font-light font-['Roboto_Condensed'] uppercase">Ritter Chamber, Imperial Fortress of Nuremberg</p>
+            </div>
+          </div>
+        </>
+      ),
+    },
+    {
+      day: 3,
+      date: "Saturday, 21st November 2026",
+      bgColor: "bg-[#0D1858]",
+      content: (
+        <>
+          <div className="relative z-10 px-4 py-2">
+                        <div className="mb-4">
+              <p className="text-white text-base font-normal font-['Orbitron'] capitalize">08:30 – 09:00</p>
+              <p className="text-white text-sm font-black font-['Roboto_Condensed'] uppercase">Keynote: Earl Owen Lecture</p>
+            </div>
+            <div className="mb-4">
+              <p className="text-white text-base font-normal font-['Orbitron'] capitalize">09:00 – 09:30</p>
+              <p className="text-white text-sm font-black font-['Roboto_Condensed'] uppercase">Session: "Redefining Care"</p>
+              <p className="text-white text-sm font-light font-['Roboto_Condensed'] uppercase">New Robots</p>
+            </div>
+            <div className="mb-4">
+              <p className="text-white text-base font-normal font-['Orbitron'] capitalize">09:30 – 10:15</p>
+              <p className="text-white text-sm font-black font-['Roboto_Condensed'] uppercase">Session: "Rocket Breakthroughs"</p>
+              <p className="text-white text-sm font-light font-['Roboto_Condensed'] uppercase">Next Level of Computer Vision & 3D Printing</p>
+            </div>
+            <div className="mb-4">
+              <p className="text-white text-base font-normal font-['Orbitron'] capitalize">11:20 – 12:30</p>
+              <p className="text-white text-sm font-black font-['Roboto_Condensed'] uppercase">Session: "Strange New Worlds"</p>
+              <p className="text-white text-sm font-light font-['Roboto_Condensed'] uppercase">Humanoid Robots</p>
+            </div>
+            <div className="mb-4">
+              <p className="text-white text-base font-normal font-['Orbitron'] capitalize">13:30 – 14:00</p>
+              <p className="text-white text-sm font-black font-['Roboto_Condensed'] uppercase">Keynote: John Wickham Lecture</p>
+            </div>
+            <div className="mb-4">
+              <p className="text-white text-base font-normal font-['Orbitron'] capitalize">15:50 – 16:30</p>
+              <p className="text-white text-sm font-black font-['Roboto_Condensed'] uppercase">Award Ceremony & Closing Session</p>
+              <p className="text-white text-sm font-light font-['Roboto_Condensed'] uppercase">Predictive Analytics</p>
+            </div>
+            <div className="mb-4">
+              <p className="text-white text-base font-normal font-['Orbitron'] capitalize">17:30</p>
+              <p className="text-white text-sm font-black font-['Roboto_Condensed'] uppercase">Official Closing of the Conference</p>
+            </div>
+            <div className="mb-4">
+              <p className="text-white text-base font-normal font-['Orbitron'] capitalize">09:00 – 09:30</p>
+              <p className="text-white text-sm font-black font-['Roboto_Condensed'] uppercase">Session: "Redefining Care"</p>
+              <p className="text-white text-sm font-light font-['Roboto_Condensed'] uppercase">New Robots</p>
+            </div>
+            <div className="mb-4">
+              <p className="text-white text-base font-normal font-['Orbitron'] capitalize">09:30 – 10:15</p>
+              <p className="text-white text-sm font-black font-['Roboto_Condensed'] uppercase">Session: "Rocket Breakthroughs"</p>
+              <p className="text-white text-sm font-light font-['Roboto_Condensed'] uppercase">Next Level of Computer Vision & 3D Printing</p>
+            </div>
+            <div className="mb-4">
+              <p className="text-white text-base font-normal font-['Orbitron'] capitalize">11:20 – 12:30</p>
+              <p className="text-white text-sm font-black font-['Roboto_Condensed'] uppercase">Session: "Strange New Worlds"</p>
+              <p className="text-white text-sm font-light font-['Roboto_Condensed'] uppercase">Humanoid Robots</p>
+            </div>
+            <div className="mb-4">
+              <p className="text-white text-base font-normal font-['Orbitron'] capitalize">13:30 – 14:00</p>
+              <p className="text-white text-sm font-black font-['Roboto_Condensed'] uppercase">Keynote: John Wickham Lecture</p>
+            </div>
+            <div className="mb-4">
+              <p className="text-white text-base font-normal font-['Orbitron'] capitalize">15:50 – 16:30</p>
+              <p className="text-white text-sm font-black font-['Roboto_Condensed'] uppercase">Award Ceremony & Closing Session</p>
+              <p className="text-white text-sm font-light font-['Roboto_Condensed'] uppercase">Predictive Analytics</p>
+            </div>
+            <div className="mb-4">
+              <p className="text-white text-base font-normal font-['Orbitron'] capitalize">17:30</p>
+              <p className="text-white text-sm font-black font-['Roboto_Condensed'] uppercase">Official Closing of the Conference</p>
+            </div>
+          </div>
+        </>
+      ),
+    },
+  ];
+
   return (
     <div className={`${robotoCondensed.variable} ${orbitron.variable} min-h-screen bg-white`}>
       {/* Hero Section */}
@@ -28,7 +185,6 @@ export default function Program() {
           <div className="absolute inset-0 bg-[#0D1858] bg-opacity-70"></div>
         </div>
 
-        {/* Navigation */}
         {/* Navigation */}
         <ResponsiveNavigation
           links={[
@@ -71,72 +227,46 @@ export default function Program() {
             </p>
           </div>
 
-          {/* Day 1 */}
-          <div className="mb-8 flex justify-center">
-            <div className="w-[615px] h-[499px] relative">
-              <div className="w-[615px] h-11 left-0 top-0 absolute bg-red-500 rounded-[10px]" />
-              <div className="w-[553.36px] h-5 left-[31.54px] top-[11px] absolute text-center justify-center text-white text-base font-black font-['Orbitron'] uppercase">Day 1: Thursday, 19th November 2026</div>
-              <div className="w-[615px] h-96 left-0 top-[86px] absolute bg-red-500 rounded-[10px]" />
-              <div className="w-[523px] h-14 left-[46px] top-[129px] absolute text-justify justify-start"><span className="text-white text-sm font-black font-['Roboto_Condensed'] uppercase">Registration Opens<br/></span><span className="text-white text-sm font-light font-['Roboto_Condensed'] uppercase">Online registration via digital congress platform. On-site digital help desks available.</span></div>
-              <div className="w-20 h-4 left-[46px] top-[110px] absolute text-justify justify-start text-white text-base font-normal font-['Orbitron'] capitalize">15:00</div>
-              <div className="w-[523px] h-8 left-[46px] top-[211px] absolute text-justify justify-start"><span className="text-white text-sm font-black font-['Roboto_Condensed'] uppercase">Welcome Reception<br/></span><span className="text-white text-sm font-light font-['Roboto_Condensed'] uppercase">Drinks and light snacks served in the networking lounge.</span></div>
-              <div className="w-20 h-4 left-[46px] top-[192px] absolute text-justify justify-start text-white text-base font-normal font-['Orbitron'] capitalize">16:00</div>
-              <div className="w-[523px] h-8 left-[46px] top-[281px] absolute text-justify justify-start"><span className="text-white text-sm font-black font-['Roboto_Condensed'] uppercase">Opening Ceremony<br/></span><span className="text-white text-sm font-light font-['Roboto_Condensed'] uppercase">Welcome addresses from congress leadership.<br/></span></div>
-              <div className="w-20 h-4 left-[46px] top-[262px] absolute text-justify justify-start text-white text-base font-normal font-['Orbitron'] capitalize">17:00</div>
-              <div className="w-[523px] h-12 left-[46px] top-[351px] absolute text-justify justify-start"><span className="text-white text-sm font-black font-['Roboto_Condensed'] uppercase">Artistic &amp; Scientific Welcome<br/></span><span className="text-white text-sm font-light font-['Roboto_Condensed'] uppercase">A unique blend of musical performances and institutional welcomes from our esteemed partners.</span></div>
-              <div className="w-32 h-4 left-[46px] top-[332px] absolute text-justify justify-start text-white text-base font-normal font-['Orbitron'] capitalize">17:30 - 19:30</div>
-              <div className="w-[523px] h-12 left-[46px] top-[432px] absolute text-justify justify-start text-white text-sm font-black font-['Roboto_Condensed'] uppercase">Closing Remarks</div>
-              <div className="w-32 h-4 left-[46px] top-[413px] absolute text-justify justify-start text-white text-base font-normal font-['Orbitron'] capitalize">20:00</div>
-            </div>
+          {/* Day Navigation Buttons */}
+          <div className="flex justify-center space-x-4 mb-8">
+            {programDays.map((dayData) => (
+              <button
+                key={dayData.day}
+                onClick={() => setActiveDay(dayData.day)}
+                className={`
+                  px-6 py-3 rounded-lg text-lg font-bold uppercase whitespace-nowrap
+                  ${activeDay === dayData.day
+                    ? 'bg-[#FE6448] text-white'
+                    : 'bg-gray-200 text-[#0D1858] hover:bg-gray-300'
+                  }
+                  transition-colors duration-300
+                `}
+              >
+                Day {dayData.day}
+              </button>
+            ))}
           </div>
 
-          {/* Day 2 */}
-          <div className="mb-8 flex justify-center">
-            <div className="w-[615px] h-[574px] relative">
-              <div className="w-[615px] h-[43px] left-0 top-0 absolute bg-[#85AFFB] rounded-[10px]" />
-              <div className="w-[553.36px] h-[21px] left-[31.54px] top-[11px] absolute flex items-center justify-center text-white text-[15px] font-black font-['Orbitron'] uppercase">Day 2: Friday, 20th November 2026</div>
-              <div className="w-[615px] h-[488px] left-0 top-[86px] absolute bg-[#85AFFB] rounded-[10px]" />
-              <div className="w-[523px] h-[23px] left-[46px] top-[129px] absolute text-justify text-white text-[14px] font-black font-['Roboto_Condensed'] uppercase">Official Welcome Ceremony &amp; John Abele Lecture<br/></div>
-              <div className="w-[144px] h-[18px] left-[46px] top-[110px] absolute text-white text-[15px] font-normal font-['Orbitron'] capitalize">08:30 – 09:30</div>
-              <div className="w-[523px] h-[32px] left-[46px] top-[178px] absolute text-justify"><span className="text-white text-[14px] font-black font-['Roboto_Condensed'] uppercase">Session: "Deep Space of Data"<br/></span><span className="text-white text-[14px] font-light font-['Roboto_Condensed'] uppercase">New Dimensions: Added Reality</span></div>
-              <div className="w-[116px] h-[18px] left-[46px] top-[159px] absolute text-white text-[15px] font-normal font-['Orbitron'] capitalize">09:30 – 10:15</div>
-              <div className="w-[523px] h-[32px] left-[46px] top-[248px] absolute text-justify"><span className="text-white text-[14px] font-black font-['Roboto_Condensed'] uppercase">Session: "Beyond the Cutting Edge"<br/></span><span className="text-white text-[14px] font-light font-['Roboto_Condensed'] uppercase">Monitoring, Planning, Decisions<br/></span></div>
-              <div className="w-[121px] h-[18px] left-[46px] top-[229px] absolute text-white text-[15px] font-normal font-['Orbitron'] capitalize">10:30 – 11:15</div>
-              <div className="w-[523px] h-[48px] left-[46px] top-[318px] absolute text-justify"><span className="text-white text-[14px] font-black font-['Roboto_Condensed'] uppercase">Session: "Next-Generation"<br/></span><span className="text-white text-[14px] font-light font-['Roboto_Condensed'] uppercase">Sensoring &amp; AI</span></div>
-              <div className="w-[523px] h-[48px] left-[46px] top-[430px] absolute text-justify"><span className="text-white text-[14px] font-black font-['Roboto_Condensed'] uppercase">Session: "Bold Frontiers"<br/></span><span className="text-white text-[14px] font-light font-['Roboto_Condensed'] uppercase">Predictive Analytics</span></div>
-              <div className="w-[523px] h-[48px] left-[46px] top-[498px] absolute text-justify"><span className="text-white text-[14px] font-black font-['Roboto_Condensed'] uppercase">Evening Event: "Feast of the Middle Ages"<br/></span><span className="text-white text-[14px] font-light font-['Roboto_Condensed'] uppercase">Ritter Chamber, Imperial Fortress of Nuremberg</span></div>
-              <div className="w-[523px] h-[31px] left-[46px] top-[385px] absolute text-justify text-white text-[14px] font-black font-['Roboto_Condensed'] uppercase">Keynote: Gerhard Buess Lecture<br/></div>
-              <div className="w-[130px] h-[18px] left-[46px] top-[299px] absolute text-white text-[15px] font-normal font-['Orbitron'] capitalize">11:20 – 12:30</div>
-              <div className="w-[130px] h-[18px] left-[46px] top-[411px] absolute text-white text-[15px] font-normal font-['Orbitron'] capitalize">14:00 – 14:55</div>
-              <div className="w-[130px] h-[18px] left-[46px] top-[479px] absolute text-white text-[15px] font-normal font-['Orbitron'] capitalize">19:00</div>
-              <div className="w-[130px] h-[18px] left-[46px] top-[366px] absolute text-white text-[15px] font-normal font-['Orbitron'] capitalize">13:30 – 14:00</div>
-            </div>
-          </div>
-
-          {/* Day 3 */}
-          <div className="mb-8 flex justify-center">
-            <div className="w-[615px] h-[574px] relative">
-              <div className="w-[615px] h-[466px] left-0 top-[86px] absolute bg-[#0D1858] rounded-[10px]" />
-              <div className="w-[523px] h-[23px] left-[46px] top-[129px] absolute text-justify text-white text-[14px] font-black font-['Roboto_Condensed'] uppercase">Keynote: Earl Owen Lecture<br/></div>
-              <div className="w-[144px] h-[18px] left-[46px] top-[110px] absolute text-white text-[15px] font-normal font-['Orbitron'] capitalize">08:30 – 09:00</div>
-              <div className="w-[523px] h-[32px] left-[46px] top-[178px] absolute text-justify"><span className="text-white text-[14px] font-black font-['Roboto_Condensed'] uppercase">Session: "Redefining Care"<br/></span><span className="text-white text-[14px] font-light font-['Roboto_Condensed'] uppercase">New Robots</span></div>
-              <div className="w-[183px] h-[18px] left-[46px] top-[159px] absolute text-white text-[15px] font-normal font-['Orbitron'] capitalize">09:00 – 09:30</div>
-              <div className="w-[523px] h-[32px] left-[46px] top-[248px] absolute text-justify"><span className="text-white text-[14px] font-black font-['Roboto_Condensed'] uppercase">Session: "Rocket Breakthroughs"<br/></span><span className="text-white text-[14px] font-light font-['Roboto_Condensed'] uppercase">Next Level of Computer Vision &amp; 3D Printing<br/></span></div>
-              <div className="w-[121px] h-[18px] left-[46px] top-[229px] absolute text-white text-[15px] font-normal font-['Orbitron'] capitalize">09:30 – 10:15</div>
-              <div className="w-[523px] h-[48px] left-[46px] top-[318px] absolute text-justify"><span className="text-white text-[14px] font-black font-['Roboto_Condensed'] uppercase">Session: "Strange New Worlds"<br/></span><span className="text-white text-[14px] font-light font-['Roboto_Condensed'] uppercase">Humanoid Robots</span></div>
-              <div className="w-[523px] h-[48px] left-[46px] top-[430px] absolute text-justify"><span className="text-white text-[14px] font-black font-['Roboto_Condensed'] uppercase">Award Ceremony &amp; Closing Session<br/></span><span className="text-white text-[14px] font-light font-['Roboto_Condensed'] uppercase">Predictive Analytics</span></div>
-              <div className="w-[523px] h-[19px] left-[46px] top-[498px] absolute text-justify text-white text-[14px] font-black font-['Roboto_Condensed'] uppercase">Official Closing of the Conference</div>
-              <div className="w-[523px] h-[31px] left-[46px] top-[385px] absolute text-justify text-white text-[14px] font-black font-['Roboto_Condensed'] uppercase">Keynote: John Wickham Lecture<br/></div>
-              <div className="w-[130px] h-[18px] left-[46px] top-[299px] absolute text-white text-[15px] font-normal font-['Orbitron'] capitalize">11:20 – 12:30</div>
-              <div className="w-[130px] h-[18px] left-[46px] top-[411px] absolute text-white text-[15px] font-normal font-['Orbitron'] capitalize">15:50 – 16:30</div>
-              <div className="w-[130px] h-[18px] left-[46px] top-[479px] absolute text-white text-[15px] font-normal font-['Orbitron'] capitalize">17:30</div>
-              <div className="w-[130px] h-[18px] left-[46px] top-[366px] absolute text-white text-[15px] font-normal font-['Orbitron'] capitalize">13:30 – 14:00</div>
-              <div className="w-[615px] h-[43px] left-0 top-0 absolute bg-[#0D1858] rounded-[10px]" />
-              <div className="w-[553.36px] h-[21px] left-[31.54px] top-[11px] absolute flex items-center justify-center text-white text-[15px] font-black font-['Orbitron'] uppercase">Day 3: Saturday, 21st November 2026</div>
-            </div>
+          {/* Display Active Day Program */}
+          <div className="flex justify-center">
+            {programDays.map((dayData) => (
+              <div
+                key={dayData.day}
+                className={`${activeDay === dayData.day ? 'block' : 'hidden'}`}
+              >
+                <DayProgramCard
+                  day={dayData.day}
+                  date={dayData.date}
+                  bgColor={dayData.bgColor}
+                  isActive={activeDay === dayData.day}
+                >
+                  {dayData.content}
+                </DayProgramCard>
+              </div>
+            ))}
           </div>
         </div>
       </section>
     </div>
-  )
+  );
 }
