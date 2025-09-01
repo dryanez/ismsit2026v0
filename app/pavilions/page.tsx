@@ -113,14 +113,14 @@ export default function Pavilions() {
 
             {/* AI Software Academy (Suite Lambda) */}
             <div className="grid md:grid-cols-2 gap-8 items-center transition-transform duration-300 ease-in-out hover:scale-105">
-              <div className="flex justify-center md:order-2">
+              <div className="flex justify-center">
                 <img
                   src="/lambda-illustration.svg"
                   alt="Lambda Pavillion Illustration"
                   className="w-full h-auto max-w-sm object-contain"
                 />
               </div>
-              <div className="bg-[#0D1858] rounded-lg p-8 text-white md:order-1">
+              <div className="bg-[#0D1858] rounded-lg p-8 text-white">
                 <h3 className="text-2xl font-orbitron font-bold uppercase mb-4">Suite Λ (Lambda) - AI Software Academy</h3>
                 <p className="text-lg font-roboto-condensed mb-6">
                   A 180-minute intensive that spotlights medical-AI platforms with hands-on coding and expert

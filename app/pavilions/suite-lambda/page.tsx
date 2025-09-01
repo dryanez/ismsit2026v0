@@ -70,25 +70,28 @@ export default function SuiteLambdaPage() {
       <section className="bg-white py-16 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-2xl md:text-4xl font-orbitron font-bold text-[#0D1858] uppercase mb-8">
-                Event Details
-              </h2>
+            <div className="flex flex-col md:flex-row items-center md:items-start gap-8">
+              
+              <div>
+                <h2 className="text-2xl md:text-4xl font-orbitron font-bold text-[#0D1858] uppercase mb-8">
+                  Event Details
+                </h2>
 
-              <div className="space-y-6">
-                <div className="bg-primary rounded-lg p-6 text-white">
-                  <h3 className="font-orbitron font-bold uppercase text-lg mb-2">Where?</h3>
-                  <p className="font-roboto-condensed text-lg">Suite Λ (Lambda)</p>
-                </div>
+                <div className="space-y-6">
+                  <div className="bg-primary rounded-lg p-6 text-white">
+                    <h3 className="font-orbitron font-bold uppercase text-lg mb-2">Where?</h3>
+                    <p className="font-roboto-condensed text-lg">Suite Λ (Lambda)</p>
+                  </div>
 
-                <div className="bg-[#85AFFB] rounded-lg p-6 text-white">
-                  <h3 className="font-orbitron font-bold uppercase text-lg mb-2">When?</h3>
-                  <p className="font-roboto-condensed text-lg">Launch windows at 10:30 | 14:30</p>
-                </div>
+                  <div className="bg-[#85AFFB] rounded-lg p-6 text-white">
+                    <h3 className="font-orbitron font-bold uppercase text-lg mb-2">When?</h3>
+                    <p className="font-roboto-condensed text-lg">Launch windows at 10:30 | 14:30</p>
+                  </div>
 
-                <div className="bg-[#0D1858] rounded-lg p-6 text-white">
-                  <h3 className="font-orbitron font-bold uppercase text-lg mb-2">Duration</h3>
-                  <p className="font-roboto-condensed text-lg">180-minute intensive session</p>
+                  <div className="bg-[#0D1858] rounded-lg p-6 text-white">
+                    <h3 className="font-orbitron font-bold uppercase text-lg mb-2">Duration</h3>
+                    <p className="font-roboto-condensed text-lg">180-minute intensive session</p>
+                  </div>
                 </div>
               </div>
             </div>
