@@ -45,13 +45,13 @@ export default function Home() {
           <div className="flex justify-between items-center w-full">
             {/* Mobile Menu Button and Logo */}
             <div className="flex items-center md:hidden">
-              <button onClick={() => setMenuOpen(!menuOpen)} className="p-2 rounded-md bg-[#FE6448] mr-2">
-                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" /></svg>
+              <button onClick={() => setMenuOpen(!menuOpen)} className="p-1 rounded-md bg-[#FE6448] mr-2">
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" /></svg>
               </button>
               <img src="/ISMIT REAL LOGO 1.svg" alt="iSMIT Logo" className="w-16 h-16 object-contain" />
             </div>
             {/* Desktop Logo - Centered */}
-            <div className="hidden md:flex flex-1 justify-end">
+            <div className="hidden md:flex ml-auto">
                 <img src="/ISMIT REAL LOGO 1.svg" alt="iSMIT Logo" className="w-24 h-24 object-contain" />
             </div>
           </div>
@@ -207,7 +207,7 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-8">
             <div className="flex justify-center">
               <Link href="/pavilions/suite-sigma" className="block transition-transform duration-300 hover:scale-110">
-                <img src="/psi-pavillion.svg" alt="PSI Pavillion" className="w-[25rem] h-[25rem] object-contain" />
+                <img src="/psi-pavillion.svg" alt="PSI Pavillion" className="w-[30rem] h-[30rem] object-contain" />
               </Link>
             </div>
             <div className="flex justify-center">
@@ -215,13 +215,13 @@ export default function Home() {
                 <img
                   src="/lambda-pavillion.svg"
                   alt="Lambda Pavillion"
-                  className="w-[25rem] h-[25rem] object-contain"
+                  className="w-[30rem] h-[30rem] object-contain"
                 />
               </Link>
             </div>
             <div className="flex justify-center">
               <Link href="/pavilions/suite-eta" className="block transition-transform duration-300 hover:scale-110">
-                <img src="/eta-pavillion.svg" alt="ETA Pavillion" className="w-[25rem] h-[25rem] object-contain" />
+                <img src="/eta-pavillion.svg" alt="ETA Pavillion" className="w-[30rem] h-[30rem] object-contain" />
               </Link>
             </div>
           </div>
