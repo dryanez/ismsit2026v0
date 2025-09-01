@@ -1,5 +1,5 @@
 import ResponsiveNavigation from "@/components/ResponsiveNavigation";
-import { Roboto_Condensed, Orbitron } = "next/font/google"
+import { Roboto_Condensed, Orbitron } from "next/font/google"
 import Link from "next/link"
 
 const robotoCondensed = Roboto_Condensed({

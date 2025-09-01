@@ -14,6 +14,34 @@ const orbitron = Orbitron({
 })
 
 export default function Speakers() {
+  const speakerImages = [
+    "/speaker-1.svg",
+    "/speaker-2.svg",
+    "/speaker-3.svg",
+  ];
+
+  const speakersData = [
+    { name: "Prof. Michele Diana", affiliation: "IRCAD Institute, Strasbourg" },
+    { name: "Prof. Dr. Tobias Keck", affiliation: "President, German Society for General and Visceral Surgery (DGAV)" },
+    { name: "Prof. Dr.-Ing. Michael Priebe", affiliation: "Angel Investor / MedTech" },
+    { name: "Prof. Andrew A. Gumbs", affiliation: "Editor-in-Chief, Artificial Intelligence Surgery" },
+    { name: "Prof. Dr. med. Roland Goldbrunner", affiliation: "President, German Society of Surgery (DGCH) 2025/26" },
+    { name: "Prof. Krzysztof Zieniewicz, MD, PhD", affiliation: "President, Polish Society of Surgery (PTCh)" },
+    { name: "Univ.-Prof. Dr. med. Marcus Lehnhardt", affiliation: "President, German Society of Plastic, Reconstructive and Aesthetic Surgeons (DGPRÄC)" },
+    { name: "Univ.-Prof. Dr. med. Matthias Rab", affiliation: "President, German-speaking Association for Microsurgery (DAM)" },
+    { name: "Prof. Dr. med. Christoph Hirche", affiliation: "Plastic and Reconstructive Surgery / Microsurgery" },
+    { name: "Dr. Max Kückelhaus", affiliation: "Young Faculty, Plastic Surgery (DGPRÄC)" },
+    { name: "Prof. Zbigniew Nawrat", affiliation: "President, Foundation for Cardiac Surgery Development (FRK), Pioneer in Cardiotechnology and Robotic Surgery (Zabrze)" },
+    { name: "Prof. Dr. med. Uwe Spetzger", affiliation: "Director, Department of Neurosurgery, Städtisches Klinikum Karlsruhe. Past President of iSMIT" },
+    { name: "Prof. Francesco Papadia", affiliation: "Gynecologic Oncology and Minimally Invasive Surgery, University of Genoa" },
+    { name: "Prof. Przemysław Czuma", affiliation: "Orthopaedic Surgeon, President, Polish Association for Artificial Intelligence in Medicine (PSSiM)" },
+    { name: "Prof. Walter Greenleaf", affiliation: "Pioneer in Virtual Reality in Medicine, Digital Health & Neuropsychology" },
+    { name: "Prof. Antoni Szczepanik", affiliation: "Surgical Oncology, Jagiellonian University Collegium Medicum, Krakow, Past President of European Surgical Association (ESA)" },
+  ].map((speaker, index) => ({
+    ...speaker,
+    imageSrc: speakerImages[index % speakerImages.length],
+  }));
+
   return (
     <div className={`${robotoCondensed.variable} ${orbitron.variable} min-h-screen bg-white`}>
       {/* Hero Section */}
@@ -75,55 +103,19 @@ export default function Speakers() {
 
           {/* Featured Speakers Grid */}
           <div className="grid md:grid-cols-3 gap-8 mb-16">
-            {[1, 2, 3, 4, 5, 6].map((speaker) => (
-              <div key={speaker} className="bg-white rounded-lg shadow-lg overflow-hidden">
+            {speakersData.map((speaker, index) => (
+              <div key={index} className="bg-white rounded-lg shadow-lg overflow-hidden">
                 <img
-                  src={`/keynote-speaker-.png?height=300&width=300&query=keynote speaker ${speaker}`}
-                  alt={`Keynote Speaker ${speaker}`}
+                  src={speaker.imageSrc}
+                  alt={speaker.name}
                   className="w-full h-64 object-cover"
                 />
                 <div className="p-6">
-                  <h3 className="text-xl font-orbitron font-bold text-[#0D1858] mb-2">Dr. Name Lastname</h3>
-                  <p className="text-[#85AFFB] font-roboto-condensed font-semibold mb-2">University of Excellence</p>
-                  <p className="text-sm font-roboto-condensed text-[#0D1858] mb-4">
-                    Leading expert in AI-driven surgical robotics and minimally invasive procedures.
-                  </p>
-                  <div className="text-xs font-roboto-condensed text-[#FE6448] uppercase">
-                    Keynote: "The Future of Autonomous Surgery"
-                  </div>
+                  <h3 className="text-xl font-orbitron font-bold text-[#0D1858] mb-2">{speaker.name}</h3>
+                  <p className="text-[#85AFFB] font-roboto-condensed font-semibold mb-2">{speaker.affiliation}</p>
                 </div>
               </div>
             ))}
-          </div>
-
-          {/* Speaker Categories */}
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-[#FE6448] rounded-lg p-6 text-white text-center">
-              <h3 className="text-xl font-orbitron font-bold uppercase mb-4">AI & Machine Learning</h3>
-              <p className="font-roboto-condensed text-sm mb-4">
-                Experts in artificial intelligence applications in surgery and medical diagnostics
-              </p>
-              <div className="text-2xl font-orbitron font-black">8</div>
-              <div className="text-sm font-roboto-condensed uppercase">Speakers</div>
-            </div>
-
-            <div className="bg-[#85AFFB] rounded-lg p-6 text-white text-center">
-              <h3 className="text-xl font-orbitron font-bold uppercase mb-4">Robotics & Automation</h3>
-              <p className="font-roboto-condensed text-sm mb-4">
-                Pioneers in surgical robotics and automated medical systems
-              </p>
-              <div className="text-2xl font-orbitron font-black">6</div>
-              <div className="text-sm font-roboto-condensed uppercase">Speakers</div>
-            </div>
-
-            <div className="bg-[#0D1858] rounded-lg p-6 text-white text-center">
-              <h3 className="text-xl font-orbitron font-bold uppercase mb-4">Digital Health</h3>
-              <p className="font-roboto-condensed text-sm mb-4">
-                Leaders in telemedicine, digital therapeutics, and health informatics
-              </p>
-              <div className="text-2xl font-orbitron font-black">5</div>
-              <div className="text-sm font-roboto-condensed uppercase">Speakers</div>
-            </div>
           </div>
         </div>
       </section>
