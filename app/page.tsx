@@ -41,7 +41,7 @@ export default function Home() {
         </div>
 
         {/* Navigation */}
-        <nav className="relative z-10 px-4 md:px-8 lg:px-36 pt-4">
+        <nav className="relative z-10 px-4 md:px-8 lg:px-36 pt-0">
           <div className="flex justify-between items-center w-full">
             {/* Mobile Menu Button and Logo */}
             <div className="flex items-center md:hidden">
@@ -51,7 +51,7 @@ export default function Home() {
               <img src="/ISMIT REAL LOGO 1.svg" alt="iSMIT Logo" className="w-16 h-16 object-contain" />
             </div>
             {/* Desktop Logo - Centered */}
-            <div className="hidden md:flex flex-1 justify-center">
+            <div className="hidden md:flex flex-1 justify-end">
                 <img src="/ISMIT REAL LOGO 1.svg" alt="iSMIT Logo" className="w-24 h-24 object-contain" />
             </div>
           </div>
