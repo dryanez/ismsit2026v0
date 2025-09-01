@@ -23,33 +23,7 @@ export default function SuiteLambdaPage() {
         </div>
 
         {/* Navigation */}
-        <nav className="relative z-10 px-4 md:px-8 lg:px-36 pt-8">
-          <div className="bg-[#FE6448] rounded-lg px-8 py-3">
-            <div className="flex flex-wrap justify-center md:justify-between items-center gap-4 md:gap-8">
-              <Link href="/" className="text-white text-sm font-orbitron font-black uppercase hover:underline">
-                Home
-              </Link>
-              <Link href="/about" className="text-white text-sm font-orbitron font-black uppercase hover:underline">
-                About
-              </Link>
-              <Link href="/program" className="text-white text-sm font-orbitron font-black uppercase hover:underline">
-                Program
-              </Link>
-              <Link href="/speakers" className="text-white text-sm font-orbitron font-black uppercase hover:underline">
-                Speakers
-              </Link>
-              <Link
-                href="/submissions"
-                className="text-white text-sm font-orbitron font-black uppercase hover:underline"
-              >
-                Submissions
-              </Link>
-              <Link href="/pavilions" className="text-white text-sm font-orbitron font-black uppercase hover:underline">
-                Pavilions
-              </Link>
-            </div>
-          </div>
-        </nav>
+        
 
         {/* Hero Content */}
         <div className="relative z-10 flex flex-col items-center justify-center h-full px-4 text-center">
@@ -102,7 +76,7 @@ export default function SuiteLambdaPage() {
               </h2>
 
               <div className="space-y-6">
-                <div className="bg-[#FE6448] rounded-lg p-6 text-white">
+                <div className="bg-primary rounded-lg p-6 text-white">
                   <h3 className="font-orbitron font-bold uppercase text-lg mb-2">Where?</h3>
                   <p className="font-roboto-condensed text-lg">Suite Λ (Lambda)</p>
                 </div>
@@ -136,7 +110,7 @@ export default function SuiteLambdaPage() {
       </section>
 
       {/* Program Highlights */}
-      <section className="bg-[#FE6448] py-16 px-4">
+      <section className="bg-primary py-16 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-2xl md:text-4xl font-orbitron font-bold text-white uppercase mb-6">
@@ -174,7 +148,7 @@ export default function SuiteLambdaPage() {
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-2xl md:text-4xl font-orbitron font-bold text-white uppercase mb-8">Requirements</h2>
 
-          <div className="bg-[#FE6448] rounded-lg p-8 text-white">
+          <div className="bg-primary rounded-lg p-8 text-white">
             <h3 className="font-orbitron font-bold uppercase text-xl mb-6">Please Bring:</h3>
             <div className="grid md:grid-cols-2 gap-6 text-left">
               <ul className="space-y-3 font-roboto-condensed text-lg">
@@ -206,13 +180,13 @@ export default function SuiteLambdaPage() {
           <div className="bg-white rounded-lg p-8 mb-8">
             <a
               href="mailto:Academyai@ismit2026.com"
-              className="text-2xl md:text-3xl font-orbitron font-bold text-[#0D1858] hover:text-[#FE6448] transition-colors"
+              className="text-2xl md:text-3xl font-orbitron font-bold text-[#0D1858] hover:text-primary transition-colors"
             >
               Academyai@ismit2026.com
             </a>
           </div>
 
-          <div className="bg-[#FE6448] rounded-lg p-6 text-white">
+          <div className="bg-primary rounded-lg p-6 text-white">
             <p className="font-roboto-condensed font-bold text-lg">
               ⚠️ Limited to 24 participants per slot - Register early to secure your spot!
             </p>

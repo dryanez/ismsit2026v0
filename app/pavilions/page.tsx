@@ -1,3 +1,4 @@
+import ResponsiveNavigation from "@/components/ResponsiveNavigation";
 import { Roboto_Condensed, Orbitron } from "next/font/google"
 import Link from "next/link"
 
@@ -28,36 +29,24 @@ export default function Pavilions() {
         </div>
 
         {/* Navigation */}
-        <nav className="relative z-10 px-4 md:px-8 lg:px-36 pt-8">
-          <div className="bg-[#FE6448] rounded-lg px-8 py-3">
-            <div className="flex flex-wrap justify-center md:justify-between items-center gap-4 md:gap-8">
-              <a href="/" className="text-white text-sm font-orbitron font-black uppercase hover:underline">
-                Home
-              </a>
-              <a href="/registration" className="text-white text-sm font-orbitron font-black uppercase hover:underline">
-                Registration
-              </a>
-              <a href="/about" className="text-white text-sm font-orbitron font-black uppercase hover:underline">
-                About
-              </a>
-              <a href="/program" className="text-white text-sm font-orbitron font-black uppercase hover:underline">
-                Program
-              </a>
-              <a href="/speakers" className="text-white text-sm font-orbitron font-black uppercase hover:underline">
-                Speakers
-              </a>
-              <a href="/submissions" className="text-white text-sm font-orbitron font-black uppercase hover:underline">
-                Submissions
-              </a>
-              <a
-                href="/pavilions"
-                className="text-[#0D1858] bg-white px-2 py-1 rounded text-sm font-orbitron font-black uppercase"
-              >
-                Pavilions
-              </a>
-            </div>
-          </div>
-        </nav>
+        {/* Navigation */}
+        <ResponsiveNavigation
+          links={[
+            { href: "/", label: "Home" },
+            { href: "/registration", label: "Registration" },
+            { href: "/about", label: "About" },
+            { href: "/program", label: "Program" },
+            { href: "/speakers", label: "Speakers" },
+            { href: "/submissions", label: "Submissions" },
+            { href: "/pavilions", label: "Pavilions", isActive: true },
+          ]}
+          logoSrc="/ISMIT REAL LOGO 1.svg"
+          logoAlt="iSMIT Logo"
+          desktopBgClass="bg-[#FE6448]"
+          mobileBgClass="bg-[#FE6448]"
+          textColorClass="text-white"
+          activeLinkClass="text-[#0D1858] bg-white px-2 py-1 rounded"
+        />
 
         {/* Hero Content */}
         <div className="relative z-10 flex flex-col items-center justify-center h-full px-4 text-center">
