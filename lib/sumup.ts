@@ -5,6 +5,10 @@ let accessToken: string | null = null;
 let tokenExpiresAt: number | null = null;
 
 export async function getSumUpAccessToken(): Promise<string> {
+  if (!SUMUP_CLIENT_ID || !SUMUP_CLIENT_SECRET) {
+    throw new Error("SumUp API credentials (SUMUP_CLIENT_ID, SUMUP_CLIENT_SECRET) are not set.");
+  }
+
   // If we have a token and it's not expired (with a 60-second buffer), return it
   if (accessToken && tokenExpiresAt && Date.now() < tokenExpiresAt - 60000) {
     return accessToken;

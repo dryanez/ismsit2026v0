@@ -110,6 +110,20 @@ export default function Registration() {
                   Register now for iSMIT 2026 and be part of the most innovative medical technology congress of the
                   year.
                 </p>
+                <button
+                  onClick={async () => {
+                    const response = await fetch('/api/payments/create-test', {
+                      method: 'POST',
+                    });
+                    const data = await response.json();
+                    if (data.checkoutUrl) {
+                      window.location.href = data.checkoutUrl;
+                    }
+                  }}
+                  className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4"
+                >
+                  Test $1 Checkout
+                </button>
               </div>
               <TicketSelection onSelectTicket={handleTicketSelection} />
             </>
